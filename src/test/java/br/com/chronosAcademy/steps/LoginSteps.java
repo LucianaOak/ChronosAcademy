@@ -3,6 +3,7 @@ package br.com.chronosAcademy.steps;
 import br.com.chronosAcademy.core.Driver;
 import br.com.chronosAcademy.enuns.Browser;
 import br.com.chronosAcademy.pages.LoginPage;
+import br.com.chronosAcademy.pages.NewAccountPage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -15,9 +16,8 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 
-public class LoginSteps<NewAccountPage, Cenario> {
+public class LoginSteps{
     LoginPage loginPage;
-    NewAccountPage newAccountPage = new NewAccountPage();
     String username;
 
 
@@ -70,9 +70,8 @@ public class LoginSteps<NewAccountPage, Cenario> {
     @Entao("a pagina Create Account deve ser exibida")
     public void aPaginaCreateAccountDeveSerExibida() {
         NewAccountPage newAccountPage = new NewAccountPage();
-        Assert.assertEquals("CREATE ACCOUNT", newAccountPage.getTextNewAccount());
+        Assert.assertEquals("Create Account", newAccountPage.getTextNewAccount());
     }
-
 
     @Quando("os campos de login forem preenchidos com os valores")
     public void osCamposDeLoginForemPreenchidosComOsValores(Map<String, String> map) throws IOException {

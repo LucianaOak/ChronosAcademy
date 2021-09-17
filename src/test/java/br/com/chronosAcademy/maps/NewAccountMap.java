@@ -1,18 +1,29 @@
 package br.com.chronosAcademy.maps;
 
-import br.com.chronosAcademy.core.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class NewAccountMap {
-    public static WebElement textCreateAccount;
-    NewAccountMap newAccountMap;
-
-
-    public NewAccountMap(){
-    newAccountMap = new NewAccountMap();
-        PageFactory.initElements(Driver.getDriver(), newAccountMap);
-    }
+    @FindBy(css = ".fixedImportant")
+    public WebElement textCreateAccount;
+    @FindBy(name = "username")
+    public WebElement inpUserName;
+    @FindBy(name = "emailRegisterPage")
+    public WebElement inpEmail;
+    @FindBy(name = "passwordRegisterPage")
+    public WebElement inpPassword;
+    @FindBy(name = "confirm_passwordRegisterPage")
+    public WebElement getInpConfirmPassword;
+    @FindBy(name = "countryListboxRegisterPage")
+    public WebElement slcCountry;
+    @FindBy(name = "i_agree")
+    public WebElement inpIagree;
+    @FindBy(css = "#register_btnundefined")
+    public WebElement btnRegister;
 }
+
+
+
+
+
 
