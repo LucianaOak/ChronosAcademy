@@ -64,6 +64,8 @@ public class Driver {
                 break;
 
         }
+        wait = new WebDriverWait(driver, 10);
+
     }
 
     private void startIe() {
@@ -84,7 +86,9 @@ public class Driver {
     private void starChrome() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setHeadless(true);
+        boolean headless = Boolean.parseBoolean(System.getProperty("headless"));
+        chromeOptions.setHeadless(headless);
+
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().setSize(new Dimension(1280, 720));
     }
@@ -99,7 +103,9 @@ public class Driver {
     public static void invisibilityOf(WebElement element){wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
-    public static void attributeChange(Object divLoader, String display, String none) {
+    public static void attributeChange(WebElement element, String attribute, String value) {
+        wait.until(ExpectedConditions.attributeContains(element, attribute, value));
+
     }
 }
 

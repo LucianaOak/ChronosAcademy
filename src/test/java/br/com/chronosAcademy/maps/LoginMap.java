@@ -20,9 +20,11 @@ public class LoginMap {
     public WebElement btnSignIn;//click
     @FindBy(linkText = "CREATE NEW ACOUNT")
     public WebElement linkCreateAccount;//click
-
-
-    public Object divLoader;
+    @FindBy(css = ".loader")
+    public WebElement divLoader;
+    @FindBy(css = ".containMiniTitle")
     public WebElement textLogado;
+    @FindBy(xpath = "//label[contains(text(), 'Incorrect')]")
     public WebElement textErroLogin;
+
 }

@@ -75,6 +75,7 @@ public class LoginSteps{
 
     @Quando("os campos de login forem preenchidos com os valores")
     public void osCamposDeLoginForemPreenchidosComOsValores(Map<String, String> map) throws IOException {
+        loginPage.aguardaLoader();
         username = map.get("usuario");
         String password = map.get("senha");
         boolean remember = Boolean.parseBoolean(map.get("remember"));
@@ -89,6 +90,7 @@ public class LoginSteps{
 
     @Quando("for realizado o clique no botao sign in")
     public void forRealizadoOCliqueNoBotaoSignIn() {
+        loginPage.aguardaLoader();
         loginPage.clickBtnSignIn();
     }
 
